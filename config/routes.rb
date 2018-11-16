@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :new, :create, :show]
 
   get '/profile', to: 'users#show', as: 'profile'
+
   devise_for :users
 
   root to: 'pages#home'

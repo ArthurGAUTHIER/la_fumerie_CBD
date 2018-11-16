@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  get 'orders/index'
-  get 'orders/show'
-  get 'orders/new'
-  get 'products/index'
-  get 'products/new'
+
+  resources :products, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :orders, only: [:index, :new, :create, :show]
+
+  get '/profile', to: 'users#show', as: 'profile'
+
   devise_for :users
 
   root to: 'pages#home'

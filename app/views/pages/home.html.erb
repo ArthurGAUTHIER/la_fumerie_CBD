@@ -2,8 +2,21 @@
   <div class="banner-content">
     <h1>Bienvenu sur GreenSpot/LaFumerie</h1>
     <p>CBD légal qualité suisse</p>
-    <a class="btn btn-primary btn-lg">Start now</a>
   </div>
 </div>
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container">
+  <h1>Pages#home</h1>
+  <p>Find me in app/views/pages/home.html.erb</p>
+  <div class="container">
+    <div class="row">
+      <% Library.all.where(watch_later: true, user: current_user).each do |instance| %>
+      <div class="col-xs-12 col-sm-3">
+        <%= render 'components/card_dashboard', medium: instance.medium %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <a class="btn btn-primary btn-lg">Start now</a>
+</div>

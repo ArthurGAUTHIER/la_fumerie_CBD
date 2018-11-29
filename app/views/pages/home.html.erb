@@ -10,9 +10,9 @@
   <p>Find me in app/views/pages/home.html.erb</p>
   <div class="container">
     <div class="row">
-      <% Library.all.where(watch_later: true, user: current_user).each do |instance| %>
+      <% Product.all.where(flower: true).each do |instance| %>
       <div class="col-xs-12 col-sm-3">
-        <%= render 'components/card_dashboard', medium: instance.medium %>
+        <%= render 'components/card_homepage', product: instance %>
       </div>
       <% end %>
     </div>
